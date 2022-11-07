@@ -1,5 +1,5 @@
 # Encypted directories
-source ~/.shellconfig/libs/kv-bash
+source ~/.shellconfig/libs/kv-bash/kv-bash
 encryptdir () {
   # encrypt and add to links
   if ![[ -e $1]]; then

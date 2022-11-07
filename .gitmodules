@@ -1,0 +1,3 @@
+[submodule "libs/kv-bash"]
+	path = libs/kv-bash
+	url = https://github.com/damphat/kv-bash.git
