@@ -1,0 +1,18 @@
+# vim: set filetype=sh :
+dir=${0:a:h}
+echo "dir: $dir"
+rm $dir/zshrc
+echo "zshrc cleared"
+cp $dir/system_default $dir/zshrc
+echo "sysdef added"
+echo "looping over $(ls $dir/*)"
+for f in $dir/*; do
+  if [[ $f != "$dir/libs" ]] && [[ $f != "$dir/zshrc" ]] && [[ $f != "$dir/system_default" ]] && [[ $f != "$dir/setup" ]]; then
+    echo "source $f" >> $dir/zshrc
+    cat $dir/zshrc $f > $dir/zshrc
+    echo "$f added to zshrc"
+  fi
+done
+rm $HOME/.zshrc && echo ".zshrc removed"
+ln "$dir/zshrc" "$HOME/.zshrc"
+echo "link created"
