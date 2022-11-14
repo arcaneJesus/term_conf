@@ -1,2 +1,3 @@
 dir=${0:a:h}
 cat $dir/bin/* > $HOME/.zshrc
+source $HOME/.zshrc
