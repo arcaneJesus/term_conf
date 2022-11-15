@@ -1,21 +1,21 @@
 # WIP
 
 # Encypted directories
-source ${0:a:h}/../libs/kv-bash/kv-bash
-encryptdir () {
-  if [[ $# == 0 ]]; then
-    echo "encryptdir dir_name [secretdir_name]"
+#source ${0:a:h}/../libs/kv-bash/kv-bash
+#encryptdir () {
+#  if [[ $# == 0 ]]; then
+#    echo "encryptdir dir_name [secretdir_name]"
   # encrypt and add to links
-  elif [[ $# == 1 ]]; then
-    
-  else
-    secret=$(readlink -f $1)
-    userfacing=$(readlink -f $2)
-    encfs $secret $userfacing
-    fusermount -u $2
-    kvset $secret $userfacing
-  fi
-}
+#  elif [[ $# == 1 ]]; then
+#    
+#  else
+#    secret=$(readlink -f $1)
+#    userfacing=$(readlink -f $2)
+#    encfs $secret $userfacing
+#    fusermount -u $2
+#    kvset $secret $userfacing
+#  fi
+#}
 
 # if no args
 #   echo help
@@ -30,20 +30,21 @@ encryptdir () {
 #   echo help
 # if
 
-opendir () {
-  if [[ -e $1 ]]; then
-    dir=$(readlink -f $1)
-    secret=$(kvget $dir)
-    encfs $secret $dir
-  else
-    echo "Dir not found"
-  fi
-}
+#opendir () {
+#  if [[ -e $1 ]]; then
+#    dir=$(readlink -f $1)
+#    secret=$(kvget $dir)
+#    encfs $secret $dir
+#  else
+#    echo "Dir not found"
+#  fi
+#}
 
-closedir() {
-  if [[ -e $1 ]] && [[ -z $(kvget $(readlink -f $1)) ]]; then
-    fusermount -u $1
-  else
-    echo "error"
-  fi
-}
+#closedir() {
+#  if [[ -e $1 ]] && [[ -z $(kvget $(readlink -f $1)) ]]; then
+#    fusermount -u $1
+#  else
+#    echo "error"
+#  fi
+#}
+
