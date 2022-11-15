@@ -1,3 +1,6 @@
 [submodule "libs/kv-bash"]
 	path = libs/kv-bash
 	url = https://github.com/damphat/kv-bash.git
+[submodule "libs/bfg_repo_cleaner"]
+	path = libs/bfg_repo_cleaner
+	url = https://github.com/rtyley/bfg-repo-cleaner.git
