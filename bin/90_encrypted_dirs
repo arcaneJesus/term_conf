@@ -1,3 +1,5 @@
+# WIP
+
 # Encypted directories
 source ~/.shellconfig/libs/kv-bash/kv-bash
 encryptdir () {
